@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen"
+    android:orientation="vertical"
+    tools:context=".view.MessageDetailsActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:background="@drawable/bg_toolbar"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight=".3"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/back">
+
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".9"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.saqcess.notification.customui.TypeTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="@font/noto_italic"
+                android:gravity="center"
+                android:spinnerMode="dropdown"
+                android:text="Message"
+                android:textAllCaps="true"
+                android:textStyle="italic"
+                android:textColor="@color/colorWhite"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".8"
+            android:gravity="center|right"
+            android:paddingRight="@dimen/dp20"
+            android:weightSum="1">
+
+        </LinearLayout>
+    </LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="30dp"
+            android:weightSum="1"
+            android:layout_marginEnd="@dimen/dp10"
+            android:background="@drawable/bg_blue_10radius">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_weight=".2">
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/svg_image"
+                    android:layout_width="40dp"
+                    android:background="@drawable/ic_logo"
+                    fresco:roundBottomEnd="false"
+                    fresco:roundBottomStart="false"
+                    fresco:placeholderImageScaleType="fitXY"
+                    fresco:roundedCornerRadius="5dp"
+                    fresco:roundingBorderColor="@color/colorBlack"
+                    fresco:roundingBorderWidth="1dp"
+                    android:layout_height="40dp">
+
+                </com.facebook.drawee.view.SimpleDraweeView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".7">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/not_sans_bold"
+                    android:singleLine="true"
+                    android:text="User"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/dp10"
+            android:background="@drawable/bg_white_10radius">
+
+            <LinearLayout
+                android:id="@+id/ll_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_message"
+                android:layout_marginTop="@dimen/dp10"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:padding="@dimen/dp3"
+                    android:src="@drawable/ic_calender"
+                    app:tint="@color/color_blue" />
+
+                <com.saqcess.notification.customui.TypeTextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/dp10"
+                    android:fontFamily="@font/not_sans_bold"
+                    android:gravity="center"
+                    android:text="19 Feb 2018"
+                    android:textColor="@color/color_blue"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_margin="@dimen/dp10"
+                android:paddingBottom="@dimen/dp10"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/not_sans_bold"
+                android:singleLine="true"
+                android:text="Test Message"
+                android:textColor="@color/colorBlack"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tv_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_margin="@dimen/dp10"
+                android:paddingBottom="@dimen/dp10"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/not_regular"
+                android:text="Test Message"
+                android:textColor="@color/colorBlack"
+                android:textSize="16dp" />
+        </LinearLayout>
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:background="@drawable/ic_logo"
+            fresco:roundBottomEnd="false"
+            android:layout_gravity="center"
+            fresco:roundBottomStart="false"
+            android:visibility="gone"
+            android:minWidth="400dp"
+            android:minHeight="400dp"
+            fresco:roundingBorderColor="@color/colorBlack"
+            fresco:roundingBorderWidth="1dp"
+            android:layout_height="wrap_content">
+
+        </com.facebook.drawee.view.SimpleDraweeView>
+    </LinearLayout>
+
+</ScrollView>
+
+
+
+</LinearLayout>
